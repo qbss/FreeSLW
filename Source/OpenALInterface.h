@@ -35,6 +35,9 @@ namespace openal
 		~OpenALInterface();
 
 		freeslw::audioSubsystem_e GetSubsystem() const;
+		
+		int GetMaxSounds() const;
+		void SetMaxSounds(int maxSounds);
 
 		void Update();
 

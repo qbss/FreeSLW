@@ -31,7 +31,7 @@
 	#endif
 #endif
 
-#define FSLW_VERSION 102
+#define FSLW_VERSION 103
 
 #define IS_SOUND_3D(SOUND)	((SOUND)->GetFormat() == TA_MONO8 || (SOUND)->GetFormat() == TA_MONO16)
 #define IS_SOUND_2D(SOUND)	((SOUND)->GetFormat() == TA_STEREO8 || (SOUND)->GetFormat() == TA_STEREO16)
@@ -190,6 +190,9 @@ namespace freeslw
 		virtual ~AudioInterface() {}
 
 		virtual audioSubsystem_e GetSubsystem() const = 0;
+		
+		virtual int GetMaxSounds() const = 0;	// returns number of sounds that can be played simultaneously
+		virtual void SetMaxSounds(int maxSounds) = 0; // set numer of sounds that can be played simultaneously, this depends on what is supported by the sound card
 
 		virtual void Update() = 0;
 

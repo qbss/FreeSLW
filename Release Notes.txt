@@ -1,4 +1,8 @@
 
+Version: 1.0.3
+==============
+* Added AudioInterface::GetMaxSounds and AudioInterface::SetMaxSounds
+
 Version: 1.0.2
 ==============
 * Removed dependency to STD vector

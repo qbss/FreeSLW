@@ -34,11 +34,13 @@
 
 namespace openal
 {
+	int maxSources = 32;
+
 	ALCdevice* alDevice = 0;
 	ALCcontext* alContext = 0;
 
-	ALuint sources[MAX_OPENAL_SOURCES];
-	bool freeSources[MAX_OPENAL_SOURCES];
+	ALuint* sources = 0;
+	bool* freeSources = 0;
 
 	std::list<OpenALStreamSound*> streamPlayList;
 	std::list<OpenALStaticSound*> staticPlayList;
@@ -76,7 +78,7 @@ namespace openal
 	{
 		if (groupActive[group] == false) return NO_SOURCE;
 
-		for (int i = 0; i < MAX_OPENAL_SOURCES; i++)
+		for (int i = 0; i < maxSources; i++)
 		{
 			if (freeSources[i])
 			{

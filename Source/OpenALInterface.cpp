@@ -30,6 +30,9 @@ namespace openal
 {
 	OpenALInterface::OpenALInterface()
 	{
+		sources = new ALuint[maxSources];
+		freeSources = new bool[maxSources];
+
 		bool alutContext = false;
 
 		if (ContextInit("DirectSound3D") == false)
@@ -58,11 +61,11 @@ namespace openal
 			}
 		}
 
-		for (int i = 0; i < MAX_OPENAL_SOURCES; i++) freeSources[i] = true;
+		for (int i = 0; i < maxSources; i++) freeSources[i] = true;
 		for (int i = 1; i < 256; i++) groupActive[i] = false;
 
 		groupActive[0] = true;
-		alGenSources(MAX_OPENAL_SOURCES,sources);
+		alGenSources(maxSources,sources);
 		alListenerf(AL_GAIN,1.0f);
 		oldTime = -1.0f;
 
@@ -74,7 +77,7 @@ namespace openal
 		StopAllSounds();
 		delete listener;
 
-		alDeleteSources(MAX_OPENAL_SOURCES,sources);
+		alDeleteSources(maxSources,sources);
 		alutExit();
 
 		for (std::list<freeslw::Sound*>::iterator w = soundList.begin(); w != soundList.end(); w++)
@@ -84,11 +87,41 @@ namespace openal
 
 		if (alContext) { alcDestroyContext(alContext); alContext = 0; }
 		if (alDevice) { alcCloseDevice(alDevice); alDevice = 0; }
+
+		delete [] sources; sources = 0;
+		delete [] freeSources; freeSources = 0;
 	}
 
 	freeslw::audioSubsystem_e OpenALInterface::GetSubsystem() const
 	{
 		return freeslw::AS_OPENAL;
+	}
+	
+	int OpenALInterface::GetMaxSounds() const
+	{
+		return maxSources;
+	}
+	
+	void OpenALInterface::SetMaxSounds(int maxSounds)
+	{
+		if (maxSounds < 4) maxSounds = 4;
+		if (maxSounds > 128) maxSounds = 128;
+		if (maxSounds == maxSources) return;
+
+		StopAllSounds();
+
+		ALuint* newSources = new ALuint[maxSounds];
+		bool* newFreeSources = new bool[maxSounds];
+
+		for (int i = 0; i < maxSounds; i++) newFreeSources[i] = true;
+		
+		alDeleteSources(maxSources,sources);
+		alGenSources(maxSounds,newSources);
+		
+		delete [] sources; sources = newSources;
+		delete [] freeSources; freeSources = newFreeSources;
+
+		maxSources = maxSounds;
 	}
 
 	void OpenALInterface::Update()

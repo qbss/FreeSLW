@@ -40,8 +40,7 @@ extern "C"
 
 #include "FreeSLW.h"
 
-#define MAX_OPENAL_SOURCES	16
-#define NO_SOURCE			-1
+#define NO_SOURCE				-1
 
 namespace freeslw
 {
@@ -57,8 +56,10 @@ namespace openal
 	extern ALCdevice* alDevice;
 	extern ALCcontext* alContext;
 
-	extern ALuint sources[MAX_OPENAL_SOURCES];
-	extern bool freeSources[MAX_OPENAL_SOURCES];
+	extern int maxSources;
+
+	extern ALuint* sources;
+	extern bool* freeSources;
 
 	extern std::list<OpenALStreamSound*> streamPlayList;
 	extern std::list<OpenALStaticSound*> staticPlayList;
