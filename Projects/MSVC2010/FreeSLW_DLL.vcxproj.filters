@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{b2c615d2-9688-464e-ba23-ab5ed4298ecc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\mmgr">
+      <UniqueIdentifier>{1ffeb7b9-5e98-4520-8d6f-ef3210a91702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wrappers">
+      <UniqueIdentifier>{e9a1b84f-2735-47c0-9abe-dc4b2893e66c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wrappers\OpenAL">
+      <UniqueIdentifier>{5226983c-483b-4849-aa09-d051cbed8faa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\FreeSLW.cpp" />
+    <ClCompile Include="..\..\Source\mmgr.cpp">
+      <Filter>Common\mmgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Functions.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OggCallback.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ZipFile.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OpenALBuffer.cpp">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OpenALGlobals.cpp">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OpenALInterface.cpp">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OpenALListener.cpp">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OpenALSource.cpp">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OpenALStaticSound.cpp">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OpenALStream.cpp">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OpenALStreamOgg.cpp">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OpenALStreamSound.cpp">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\FreeSLW.h" />
+    <ClInclude Include="..\..\Source\mmgr.h">
+      <Filter>Common\mmgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\nommgr.h">
+      <Filter>Common\mmgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Fade.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\File.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Functions.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OggCallback.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Timer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ZipFile.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OpenALBuffer.h">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OpenALGlobals.h">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OpenALInterface.h">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OpenALListener.h">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OpenALSource.h">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OpenALStaticSound.h">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OpenALStream.h">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OpenALStreamOgg.h">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OpenALStreamSound.h">
+      <Filter>Wrappers\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Vector.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

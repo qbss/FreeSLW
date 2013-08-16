@@ -1,0 +1,12 @@
+
+Version: 1.0.2
+==============
+* Removed dependency to STD vector
+
+Version: 1.0.1
+==============
+* Added function "ReleaseAllSounds" to the AudioInterface
+
+Version: 1.0.0
+==============
+* First initial version
